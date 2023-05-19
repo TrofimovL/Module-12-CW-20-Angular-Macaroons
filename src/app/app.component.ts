@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {AdvantageType} from "./types/advantage.type";
 import {MacaroonType} from "./types/macaroon.type";
+import {OrderInfoType} from "./types/orderInfo.type";
 
 @Component({
   selector: 'app-main',
@@ -10,11 +11,15 @@ import {MacaroonType} from "./types/macaroon.type";
 export class AppComponent {
   title = 'cw20_angular_macaroons';
 
-  public static phone:string = '+375 (29) 368-98-68';
+  public static phone: string = '+375 (29) 368-98-68';
 
-  public orderedItem: string = '';
+  public userInfo: OrderInfoType = {
+    itemName: '',
+    name: '',
+    tel: '',
+  }
 
-  public showPresent:boolean = false;
+  public showPresent: boolean = false;
 
   public scrollTo(scrollTo: HTMLElement): void {
     scrollTo.scrollIntoView({behavior: 'smooth'});
@@ -22,8 +27,37 @@ export class AppComponent {
 
   public orderItem(scrollTo: HTMLElement, item: MacaroonType): void {
     this.scrollTo(scrollTo);
-    this.orderedItem = item.title.toUpperCase();
+    this.userInfo.itemName = item.title.toUpperCase();
   }
+
+  public orderDone() {
+    let isValid:boolean = true;
+
+    if(!this.userInfo.itemName) isValid = false;
+    if(!this.userInfo.name) isValid = false;
+    if(!this.userInfo.tel) isValid = false;
+
+    if(isValid){
+      const body: OrderInfoType = {
+        itemName: this.userInfo.itemName,
+        name: this.userInfo.name,
+        tel: this.userInfo.tel,
+      }
+
+      //   send
+
+      alert('Заказ принят')
+
+      this.userInfo = {
+        itemName: '',
+        name: '',
+        tel: '',
+      }
+    }
+
+
+  }
+
 
   public advantages: AdvantageType[] = [
     {
