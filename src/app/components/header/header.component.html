@@ -28,7 +28,6 @@
     <div class="header__burger" id="burger" (click)="popupSwitch()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
         width="40px" height="22px">
         <path fill-rule="evenodd"  fill="rgb(130, 19, 40)"
               d="M0.0,0.0 L39.999,0.0 L39.999,1.999 L0.0,1.999 L0.0,0.0 Z"/>
@@ -40,9 +39,9 @@
     </div>
     <div [class]="'popup-menu' + (isPopupOpen ? ' open' : '')" id="popup-menu">
       <div class="close" (click)="popupSwitch()">
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             viewBox="0 0 492 492" style="enable-background:new 0 0 492 492;" xml:space="preserve">
+        <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+             x="0px" y="0px"
+             viewBox="0 0 492 492">
 <g>
 	<g>
 		<path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872
