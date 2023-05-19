@@ -12,7 +12,7 @@ export class HeaderComponent {
 
   public isPopupOpen: boolean = false;
 
-  public popupSwitch():void{
+  popupSwitch(){
     this.isPopupOpen = !this.isPopupOpen
   }
 
