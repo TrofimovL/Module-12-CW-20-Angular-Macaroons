@@ -1,0 +1,37 @@
+/*====================footer====================*/
+
+.footer {
+  background-color: #c0707c;
+  padding-top: 73px;
+  padding-bottom: 62px;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__rights {
+  font-size: 12px;
+  font-family: "Gilroy", sans-serif;
+  color: rgb(227, 172, 180);
+  margin-top: 19px;
+}
+
+.footer__social {
+  text-align: center;
+  text-decoration: none;
+}
+
+.footer__inst-text {
+  font-size: 16px;
+  font-family: "Gilroy", sans-serif;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+/*.footer__call {*/
+/*    margin-right: 30px;*/
+/*}*/

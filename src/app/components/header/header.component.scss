@@ -1,0 +1,61 @@
+/*====================header====================*/
+
+.header {
+  background-color: #eba8b1;
+}
+
+
+
+.header__container {
+  padding-top: 36px;
+  padding-bottom: 29px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__burger {
+  cursor: pointer;
+  display: none;
+}
+
+
+
+.header__logo-span {
+  text-decoration: none;
+  color: white;
+}
+
+.header__list {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.header__link {
+  font-size: 14px;
+  font-family: Gilroy, sans-serif;
+  font-weight: 500;
+  color: rgb(119, 11, 29);
+  padding: 3px;
+  box-sizing: border-box;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition-duration: 0.4s;
+}
+
+.header__link:hover {
+  border-bottom: 2px solid rgb(119, 11, 29);
+}
+
+.call__span {
+  font-size: 16px;
+  font-family: "Gilroy", sans-serif;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
+
+.popup-menu {
+  display: none;
+}
+
+
