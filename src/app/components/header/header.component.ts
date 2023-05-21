@@ -8,14 +8,11 @@ import {ContactsService} from "../../services/contacts.service";
 })
 export class HeaderComponent {
 
-
   public isPopupOpen: boolean = false;
 
-
-  popupSwitch() {
+  popupSwitch():void {
     this.isPopupOpen = !this.isPopupOpen
   }
-
 
   protected readonly ContactsService = ContactsService;
 }

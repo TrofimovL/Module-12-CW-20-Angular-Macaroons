@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {AdvantageType} from "./types/advantage.type";
 import {MacaroonType} from "./types/macaroon.type";
+import {FormType} from "./types/form.type";
 
 @Component({
   selector: 'app-main',
@@ -10,9 +11,13 @@ import {MacaroonType} from "./types/macaroon.type";
 export class AppComponent {
   title = 'cw20_angular_macaroons';
 
-  public orderedItem: string = '';
+  public showPresent: boolean = false;
 
-  public showPresent:boolean = false;
+  public formValues: FormType = {
+    customerOrderTitle: '',
+    customerName: '',
+    customerPhone: ''
+  }
 
   public scrollTo(scrollTo: HTMLElement): void {
     scrollTo.scrollIntoView({behavior: 'smooth'});
@@ -20,7 +25,29 @@ export class AppComponent {
 
   public orderItem(scrollTo: HTMLElement, item: MacaroonType): void {
     this.scrollTo(scrollTo);
-    this.orderedItem = item.title.toUpperCase();
+    this.formValues.customerOrderTitle = item.title.toUpperCase();
+  }
+
+  public orderDone() {
+    if (this.checkFields()) {
+      alert(`Ваш заказ \"${this.formValues.customerOrderTitle}\" скоро будет готов. Ожидайте звонка.`)
+      this.formValues = {
+        customerOrderTitle: '',
+        customerName: '',
+        customerPhone: ''
+      }
+    } else {
+      alert('Заполните все поля.')
+    }
+  }
+
+  private checkFields(): boolean {
+
+    if (!this.formValues.customerOrderTitle.trim()) return false;
+    if (!this.formValues.customerName.trim()) return false;
+    if (!this.formValues.customerPhone.trim()) return false;
+
+    return true;
   }
 
   public advantages: AdvantageType[] = [

@@ -12,6 +12,6 @@ export class FooterComponent {
   constructor(public phone: ContactsService) {
   }
 
-  public intagramLink:string = 'https://instagram.com'
+  public instagramLink:string = 'https://instagram.com'
   protected readonly ContactsService = ContactsService;
 }

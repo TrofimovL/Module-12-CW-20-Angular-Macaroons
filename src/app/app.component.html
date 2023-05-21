@@ -71,7 +71,7 @@
     <div class="choose__menu">
       <div class="choose__item" *ngFor="let macaroon of macaroons; let i = index">
         <div class="choose__picture">
-          <img class="choose__picture-itself" src="../assets/images/{{macaroon.imgSrc}}.png" alt="Menu 1">
+          <img class="choose__picture-itself" src="../assets/images/{{macaroon.imgSrc}}.png" alt="Menu {{i+1}}">
         </div>
 
         <div class="choose__name">
@@ -119,16 +119,16 @@
         <p class="order__prompt">
           Ваш выбор
         </p>
-        <input class="order__input" required="required" type="text" name="Order"
-               placeholder="Напишите, что хотите заказать..." [(ngModel)]="orderedItem">
+        <input class="order__input" required="required" type="text" name="customerOrderTitle"
+               placeholder="Напишите, что хотите заказать..." [(ngModel)]="formValues.customerOrderTitle">
         <p class="order__prompt">
           Заполните данные для заказа
         </p>
-        <input class="order__input" required="required" type="text" placeholder="Ваше имя">
+        <input class="order__input" required="required" type="text" name="customerName" placeholder="Ваше имя" [(ngModel)]="formValues.customerName">
         <input id="online_phone" class="order__input" required="required" type="tel"
-               placeholder="+375 (__) ___ - __ - __" value="+375 (__) ___ - __ - __">
+               placeholder="+375 (__) ___ - __ - __" name="customerPhone" [(ngModel)]="formValues.customerPhone">
         <div class="oder__action">
-          <button class="btn order__btn">
+          <button class="btn order__btn" (click)="orderDone()">
             Выбрать макарун
           </button>
         </div>
