@@ -1,0 +1,25 @@
+<div class="choose__item">
+  <div class="choose__picture">
+    <img class="choose__picture-itself" src="../assets/images/{{product.imgSrc}}.png" alt="Menu {{index+1}}">
+  </div>
+
+  <div class="choose__name">
+    {{product.title}}
+  </div>
+
+  <div class="choose__order">
+    <div class="choose__order-info">
+      <p class="choose__number">
+        1 шт.
+      </p>
+      <p class="choose__price">
+        {{product.price | currencyPipe}}
+      </p>
+    </div>
+    <div class="choose__action">
+      <button class="btn choose__btn" (click)="orderItem(product)" myBackground [myBackgroundDefault]="['#000', '#fff']">
+        Заказать
+      </button>
+    </div>
+  </div>
+</div>

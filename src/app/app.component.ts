@@ -22,6 +22,7 @@ export class AppComponent {
     customerPhone: ''
   }
 
+
   // public macaroons: ProductType[] = this.ProductsService.getProducts()
 
   constructor(public ProductsService: ProductsService,
@@ -33,10 +34,12 @@ export class AppComponent {
     scrollTo.scrollIntoView({behavior: 'smooth'});
   }
 
-  public orderItem(scrollTo: HTMLElement, item: ProductType): void {
-    this.scrollTo(scrollTo);
-    this.formValues.customerOrderTitle = item.title.toUpperCase();
-    this.CartService.count++;
+  public orderItem(title:string, scrollTo: HTMLElement): void {
+    // this.scrollTo(scrollTo);
+    this.formValues.customerOrderTitle = title.toUpperCase();
+    // this.CartService.count++;
+    alert(`${title} добавлен в корзину!`);
+
   }
 
   public orderDone() {

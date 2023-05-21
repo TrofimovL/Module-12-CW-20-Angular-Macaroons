@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {ProductType} from "../types/product.type";
 import {AdvantageType} from "../types/advantage.type";
 
@@ -7,7 +7,7 @@ import {AdvantageType} from "../types/advantage.type";
 })
 export class AdvantagesService {
 
-  getAdvantages():AdvantageType[]{
+  getAdvantages(): AdvantageType[] {
     return [
       {
         title: 'Лучшие продукты',
@@ -15,7 +15,7 @@ export class AdvantagesService {
       },
       {
         title: 'Много вкусов',
-        description: 'Наша задача – предоставить вам широкое разнобразие вкусов. Вы удивитесь, но у нас более 70 вкусов пироженок.'
+        description: 'Наша задача – предоставить вам широкое разнобразие вкусов. Вы удивитесь, но у нас более 70 вкусов пироженок. Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem Lorem '
       },
       {
         title: 'Бисквитное тесто',

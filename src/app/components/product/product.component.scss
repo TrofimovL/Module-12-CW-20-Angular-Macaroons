@@ -1,0 +1,57 @@
+
+
+.choose__item {
+  border-width: 2px;
+  border-color: rgb(255, 255, 255);
+  border-style: solid;
+  border-radius: 20px;
+  width: 263px;
+  height: 229px;
+  box-sizing: border-box;
+}
+
+.choose__picture {
+  text-align: center;
+  height: 109px;
+  position: relative;
+}
+
+.choose__picture-itself {
+  position: relative;
+  top: -60px;
+  transition-duration: 0.4s;
+}
+
+.choose__item:hover .choose__picture-itself {
+  transform: scale(1.1);
+}
+
+.choose__name {
+  font-size: 18px;
+  font-family: "Tavolga", sans-serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.choose__order {
+  display: flex;
+  margin-top: 26px;
+  padding: 0 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.choose__number, .choose__price {
+  font-size: 15px;
+  font-family: "Gilroy", sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+.choose__number {
+  margin-bottom: 10px;
+}
+
+.choose__btn {
+  width: 130px;
+  height: 50px;
+}

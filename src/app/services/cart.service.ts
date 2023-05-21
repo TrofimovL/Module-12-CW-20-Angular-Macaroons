@@ -4,11 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CartService {
-
   public count: number = 0;
 
-  calculateAmount(){
-
-  }
-
+  public price: number = 0;
 }

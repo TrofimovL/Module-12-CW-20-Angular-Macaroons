@@ -22,7 +22,7 @@
 
     <div class="call header__call">
             <span class="call__span">
-                {{ContactsService.phone}}
+                {{ContactsService.phone | phoneFormat}}
             </span>
     </div>
     <div class="header__burger" id="burger" (click)="popupSwitch()">

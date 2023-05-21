@@ -13,7 +13,7 @@
       </div>
 
       <div class="main__action">
-        <button class="btn main__btn" (click)="scrollTo(choose)">
+        <button class="btn main__btn" (click)="scrollTo(choose)" myBackground [myBackgroundDefault]="['#ecdddd', 'rgba(70,102,171,0.9)']" [myBackgroundHover]="['#aaa','#33f']" >
           Выбрать макарун
         </button>
       </div>
@@ -58,35 +58,9 @@
     <h2 class="choose__h2">
       Выберите свой макарун
     </h2>
-
     <div class="choose__menu">
-      <div class="choose__item" *ngFor="let macaroon of ProductsService.getProducts(); let i = index">
-        <div class="choose__picture">
-          <img class="choose__picture-itself" src="../assets/images/{{macaroon.imgSrc}}.png" alt="Menu {{i+1}}">
-        </div>
-
-        <div class="choose__name">
-          {{macaroon.title}}
-        </div>
-
-        <div class="choose__order">
-          <div class="choose__order-info">
-            <p class="choose__number">
-              1 шт.
-            </p>
-            <p class="choose__price">
-              {{macaroon.price}} руб.
-            </p>
-          </div>
-          <div class="choose__action">
-            <button class="btn choose__btn" (click)="orderItem(order, macaroon)">
-              Заказать
-            </button>
-          </div>
-        </div>
-      </div>
-
-
+      <app-product *ngFor="let product of ProductsService.getProducts(); let i = index" [product]="product"
+                   [index]="i" (orderItemEvent)="orderItem($event,  order)"></app-product>
     </div>
   </div>
 </section>
@@ -119,10 +93,10 @@
         </p>
         <input class="order__input" required="required" type="text" name="customerName" placeholder="Ваше имя"
                [(ngModel)]="formValues.customerName">
-        <input id="online_phone" class="order__input" required="required" type="tel"
+        <input id="online_phone" class="order__input" required="required" type="text"
                placeholder="+375 (__) ___ - __ - __" name="customerPhone" [(ngModel)]="formValues.customerPhone">
         <div class="oder__action">
-          <button class="btn order__btn" (click)="orderDone()">
+          <button class="btn order__btn" (click)="orderDone()" myBackground>
             Выбрать макарун
           </button>
         </div>
@@ -134,13 +108,13 @@
 <div class="present" *ngIf="showPresent">
   <div class="present__text">
         <span>
-          3,40 руб.
+          {{CartService.price | currencyPipe}}
         </span>
   </div>
   <div class="present__image">
     <img ngSrc="../assets/images/cart.png" alt="Cart" width="30" height="30">
   </div>
-  <div id="cart-number">5</div>
+  <div id="cart-number">{{CartService.count}}</div>
 </div>
 
 
