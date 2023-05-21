@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {AppComponent} from "../../app.component";
+import {Component, OnInit} from '@angular/core';
+import {ContactsService} from "../../services/contacts.service";
 
 @Component({
   selector: 'app-header',
@@ -8,14 +8,15 @@ import {AppComponent} from "../../app.component";
 })
 export class HeaderComponent {
 
-  public phone: string = AppComponent.phone;
 
   public isPopupOpen: boolean = false;
 
-  popupSwitch(){
+
+  popupSwitch() {
     this.isPopupOpen = !this.isPopupOpen
   }
 
 
+  protected readonly ContactsService = ContactsService;
 }
 

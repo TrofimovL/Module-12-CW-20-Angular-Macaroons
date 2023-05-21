@@ -10,8 +10,6 @@ import {MacaroonType} from "./types/macaroon.type";
 export class AppComponent {
   title = 'cw20_angular_macaroons';
 
-  public static phone:string = '+375 (29) 368-98-68';
-
   public orderedItem: string = '';
 
   public showPresent:boolean = false;

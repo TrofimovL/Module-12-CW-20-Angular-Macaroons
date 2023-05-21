@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {AppComponent} from "../../app.component";
+import {ContactsService} from "../../services/contacts.service";
 
 @Component({
   selector: 'app-footer',
@@ -8,7 +9,9 @@ import {AppComponent} from "../../app.component";
 })
 export class FooterComponent {
 
-  public phone: string = AppComponent.phone;
+  constructor(public phone: ContactsService) {
+  }
 
   public intagramLink:string = 'https://instagram.com'
+  protected readonly ContactsService = ContactsService;
 }

@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {FormsModule} from "@angular/forms";
+import {ContactsService} from "./services/contacts.service";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import {FormsModule} from "@angular/forms";
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent, HeaderComponent, FooterComponent]
+  providers: [ContactsService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
