@@ -47,17 +47,8 @@
       </div>
     </div>
     <div class="advantages__flex-container-2">
-      <div class="advantage" *ngFor="let advantage of advantages; let i = index">
-        <div class="advantages__number">
-          <span class="advantages__number-span">{{i+1}}</span>
-        </div>
-        <div class="advantages__adv-name">
-          {{advantage.title}}
-        </div>
-        <div class="advantages__adv-description">
-          {{advantage.description}}
-        </div>
-      </div>
+      <app-advantage class="advantage" [advantage]="advantage" [index]="i"
+                     *ngFor="let advantage of AdvantagesService.getAdvantages(); let i = index"></app-advantage>
     </div>
   </div>
 </section>
@@ -69,7 +60,7 @@
     </h2>
 
     <div class="choose__menu">
-      <div class="choose__item" *ngFor="let macaroon of macaroons; let i = index">
+      <div class="choose__item" *ngFor="let macaroon of ProductsService.getProducts(); let i = index">
         <div class="choose__picture">
           <img class="choose__picture-itself" src="../assets/images/{{macaroon.imgSrc}}.png" alt="Menu {{i+1}}">
         </div>
@@ -103,9 +94,11 @@
 <section class="order" #order>
   <div class="container order__container">
     <div class="order__image">
-      <img class="order__image-main" src="../assets/images/order-main.png" alt="Order Main">
-      <img class="order__image-str-1" src="../assets/images/order-strawberry-1.png" alt="Strawberry 1">
-      <img class="order__image-str-2" src="../assets/images/order-strawberry-2.png" alt="Strawberry 2">
+      <img class="order__image-main" ngSrc="../assets/images/order-main.png" alt="Order Main" height="490" width="408">
+      <img class="order__image-str-1" ngSrc="../assets/images/order-strawberry-1.png" alt="Strawberry 1" height="101"
+           width="82">
+      <img class="order__image-str-2" ngSrc="../assets/images/order-strawberry-2.png" alt="Strawberry 2" height="66"
+           width="50">
     </div>
     <div class="order__form">
       <h2 class="order__h2">
@@ -124,7 +117,8 @@
         <p class="order__prompt">
           Заполните данные для заказа
         </p>
-        <input class="order__input" required="required" type="text" name="customerName" placeholder="Ваше имя" [(ngModel)]="formValues.customerName">
+        <input class="order__input" required="required" type="text" name="customerName" placeholder="Ваше имя"
+               [(ngModel)]="formValues.customerName">
         <input id="online_phone" class="order__input" required="required" type="tel"
                placeholder="+375 (__) ___ - __ - __" name="customerPhone" [(ngModel)]="formValues.customerPhone">
         <div class="oder__action">
@@ -140,13 +134,13 @@
 <div class="present" *ngIf="showPresent">
   <div class="present__text">
         <span>
-            Оформите заказ
-и получите подарок!
+          3,40 руб.
         </span>
   </div>
   <div class="present__image">
-    <img src="../assets/images/present.png" alt="Present">
+    <img ngSrc="../assets/images/cart.png" alt="Cart" width="30" height="30">
   </div>
+  <div id="cart-number">5</div>
 </div>
 
 

@@ -150,28 +150,7 @@
     text-align: center;
     margin: 40px 0 40px 0;
   }
-  .advantage {
-    max-width: 166px;
-    text-align: center;
-  }
-  .advantages__number {
-    text-align: center;
-    left: 25%;
-  }
-  .advantages__number::before {
-    left: 50px;
-  }
-  .advantages__flex-container-2 {
-    justify-content: center;
-    gap: 41px 30px;
-  }
-  .advantages__adv-name {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  .advantages__adv-description {
-    font-size: 13px;
-  }
+
   .choose {
     padding: 100px 0;
   }
@@ -274,23 +253,7 @@
   .advantages__picture-itself {
     width: 100%;
   }
-  .advantage {
-    width: 130px;
-  }
-  .advantages__number {
-    margin-bottom: 20px;
-    /*text-align: center;*/
-    align-items: center;
-  }
-  .advantages__number::before {
-    left: 30px;
-  }
-  .advantages__adv-name {
-    width: 115px;
-    /*text-align: center;*/
-    margin: 0 auto 10px auto;
 
-  }
   .order {
     padding-top: 60px;
   }

@@ -1,4 +1,4 @@
-export type MacaroonType = {
+export type ProductType = {
   imgSrc: string,
   title: string,
   price: string
