@@ -8,9 +8,9 @@ import {ContactsService} from "../../services/contacts.service";
 })
 export class FooterComponent {
 
-  constructor(public phone: ContactsService) {
+  constructor(public ContactsService: ContactsService) {
   }
 
   public instagramLink:string = 'https://instagram.com'
-  protected readonly ContactsService = ContactsService;
+  // protected readonly ContactsService = ContactsService;
 }

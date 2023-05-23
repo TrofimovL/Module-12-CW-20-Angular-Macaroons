@@ -9,14 +9,16 @@ import {CartService} from "../../services/cart.service";
 })
 export class ProductComponent {
 
-  @Input() product: ProductType = {} as ProductType;
+  @Input() product!: ProductType;
   @Input() index: number = 0;
 
   @Output() orderItemEvent: EventEmitter<string> = new EventEmitter<string>();
 
   constructor(public CartService: CartService) {}
   orderItem(product:ProductType):void{
-    this.CartService.price += parseFloat(product.price.replace(',', '.'));
+    // this.CartService.price += parseFloat(product.price.replace(',', '.'));
+    this.CartService.price += product.price
+    this.CartService.price = Number(this.CartService.price.toFixed(2));
     this.CartService.count++;
     this.orderItemEvent.emit(this.product.title);
   }

@@ -10,10 +10,11 @@ export class HeaderComponent {
 
   public isPopupOpen: boolean = false;
 
+  constructor(public ContactsService: ContactsService) {
+  }
+
   popupSwitch():void {
     this.isPopupOpen = !this.isPopupOpen
   }
-
-  protected readonly ContactsService = ContactsService;
 }
 

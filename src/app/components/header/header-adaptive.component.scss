@@ -19,6 +19,7 @@
   .popup-menu {
     z-index: 10;
     position: fixed;
+    display: flex;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -26,13 +27,12 @@
     left: 0;
     background: rgba(235, 168, 177, 0.9);
     justify-content: center;
-    transition-duration: 0.3s;
-  }
-  //.popup-menu.open {
-  .popup-menu{
-    display: flex;
     align-items: center;
-    top: 0;
+    transition-duration: .4s;
+
+    &.open{
+      top: 0;
+    }
   }
 
   .popup-menu .close {
@@ -44,6 +44,9 @@
     position: absolute;
     top: 20px;
     right: 20px;
+
+    background-color: transparent;
+    border: 0;
   }
   .popup-menu__list {
     list-style: none;

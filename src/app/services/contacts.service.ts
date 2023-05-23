@@ -5,5 +5,5 @@ import { Injectable } from '@angular/core';
 })
 export class ContactsService {
   // public static phone: string = '+375 (29) 368-98-68';
-  public static phone: string = '375293689868';
+  public phone: string = '375293689868';
 }

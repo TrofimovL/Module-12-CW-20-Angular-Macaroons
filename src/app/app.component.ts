@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {AdvantageType} from "./types/advantage.type";
 import {ProductType} from "./types/product.type";
 import {FormType} from "./types/form.type";
 import {ProductsService} from "./services/products.service";
@@ -23,9 +22,9 @@ export class AppComponent {
   }
 
 
-  // public macaroons: ProductType[] = this.ProductsService.getProducts()
+  public macaroons: ProductType[] = this.ProductsService.getProducts();
 
-  constructor(public ProductsService: ProductsService,
+  constructor(private ProductsService: ProductsService,
               public CartService: CartService,
               public AdvantagesService:AdvantagesService) {
   }
@@ -34,10 +33,8 @@ export class AppComponent {
     scrollTo.scrollIntoView({behavior: 'smooth'});
   }
 
-  public orderItem(title:string, scrollTo: HTMLElement): void {
-    // this.scrollTo(scrollTo);
+  public orderItem(title:string): void {
     this.formValues.customerOrderTitle = title.toUpperCase();
-    // this.CartService.count++;
     alert(`${title} добавлен в корзину!`);
 
   }
