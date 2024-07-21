@@ -17,9 +17,10 @@
           class="btn main__btn"
           (click)="scrollTo(choose)"
           myBackground
-          [myBackgroundDefault]="['#ecdddd', 'rgba(70,102,171,0.9)']"
-          [myBackgroundHover]="['#aaa','#33f']"
+          [myBackgroundDefault]="['#71081e', '#d7485c']"
+          [myBackgroundHover]="['#b90b2f', '#f3697c']"
         >
+          <a routerLink="" fragment=""></a>
           Выбрать макарун
         </button>
       </div>
@@ -31,7 +32,7 @@
   </div>
 </section>
 
-<section class="advantages">
+<section class="advantages" id="advantages" #advantages>
   <div class="container advantages__container">
     <div class="advantages__flex-container-1">
       <div class="advantages__text">
@@ -66,7 +67,7 @@
   </div>
 </section>
 
-<section class="choose" #choose>
+<section class="choose" id="choose" #choose>
   <div class="container">
     <h2 class="choose__h2">
       Выберите свой макарун
@@ -77,13 +78,13 @@
          let i = index"
         [product]="product"
         [index]="i"
-        (orderItemEvent)="orderItem($event,  order)"
+        (orderItemEvent)="orderItem($event)"
       ></app-product>
     </div>
   </div>
 </section>
 
-<section class="order" #order>
+<section class="order" id="order" #order>
   <div class="container order__container">
     <div class="order__image">
       <img class="order__image-main" ngSrc="../assets/images/order-main.png" alt="Order Main" height="490" width="408">
@@ -112,7 +113,7 @@
         <input class="order__input" required="required" type="text" name="customerName" placeholder="Ваше имя"
                [(ngModel)]="formValues.customerName">
         <input id="online_phone" class="order__input" required="required" type="text"
-               placeholder="+375 (__) ___ - __ - __" name="customerPhone" [(ngModel)]="formValues.customerPhone">
+               placeholder="Ваш номер телефона" name="customerPhone" [(ngModel)]="formValues.customerPhone">
         <div class="oder__action">
           <button class="btn order__btn" (click)="orderDone()" myBackground>
             Выбрать макарун

@@ -9,22 +9,22 @@ export class ProductsService {
       {
         imgSrc: 'menu1',
         title: 'Макарун с малиной',
-        price: 1.70
+        price: 69.90
       },
       {
         imgSrc: 'menu2',
         title: 'Макарун с манго',
-        price: 1.70
+        price: 77.80
       },
       {
         imgSrc: 'menu3',
         title: 'Пирог с ванилью',
-        price: 1.70
+        price: 86.50
       },
       {
         imgSrc: 'menu4',
         title: 'Пирог с фисташками',
-        price: 1.70
+        price: 110.70
       }
     ]
   }

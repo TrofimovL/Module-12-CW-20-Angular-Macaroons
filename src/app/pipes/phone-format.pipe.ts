@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class PhoneFormatPipe implements PipeTransform {
 
   transform(value: string): string {
-    return `+${value.slice(0,3)} (${value.slice(3,5)}) ${value.slice(5,8)}-${value.slice(8,10)}-${value.slice(10,12)}`
+    return `+${value.slice(0,1)} (${value.slice(1,4)}) ${value.slice(4,7)}-${value.slice(7,9)}-${value.slice(9,12)}`
   }
 
 }
